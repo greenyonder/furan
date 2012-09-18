@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ActionBarCompat" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:paddingLeft="15dip"
+        android:scaleType="center"
+        android:src="@drawable/furlogo" />
+
+<RelativeLayout
+           android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+     >
+<Button
+        android:id="@+id/mnubtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dip"
+        android:drawableTop="@drawable/help"
+       android:background="@android:color/transparent"
+          android:layout_alignParentRight="true"
+            android:scaleType="center"
+         />
+ </RelativeLayout>
+
+</LinearLayout>

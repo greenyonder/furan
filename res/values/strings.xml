@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="toptext">Menu Taste für weitere Optionen</string>
+    <string name="app_name">Führerschein quiz trainer AUTO</string>
+
+         <string name="menu_home">Home</string>
+	    <string name="menu_start">Start</string>
+    <string name="menu_mode">Mode</string>
+    <string name="menu_mode1">Fehlerpunkte 2,3,4,5</string>
+    <string name="menu_mode2">Fehlerpunkte 2</string>
+    <string name="menu_mode3">Fehlerpunkte 3</string>
+    <string name="menu_mode4">Fehlerpunkte 4</string>
+    <string name="menu_mode5">Fehlerpunkte 5</string>
+    <string name="menu_mode6">Prüfung</string>
+    <string name="menu_mode7">Optionen</string>
+  
+    
+    
+     <string name="menu_reset1">Reset Fehlerpunkte 2,3,4,5</string>
+    <string name="menu_reset2">Reset Fehlerpunkte 2</string>
+    <string name="menu_reset3">Reset Fehlerpunkte 3</string>
+    <string name="menu_reset4">Reset Fehlerpunkte 4</string>
+    <string name="menu_reset5">Reset Fehlerpunkte 5</string>
+    <string name="menu_reset6">Reset Fehlerpunkte Prüfung</string>
+    
+	<string name="menu_mofa">MOFA</string>
+	<string name="menu_moto">MOTO</string>
+	
+	
+    
+    
+    
+    <string name="menu_help">Hilfe</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_errori">Fehler</string>
+ 
+    <string name="menu_reset">Reset</string>
+    <string name="msgerror">(Fehler!)</string>
+    
+     <string name="btngo">Test starten</string>
+     <string name="btngo1">OK</string>
+     <string name="btngo2">Nächste Frage</string>
+     
+     <string name="btnpassed">Bestanden:)</string>
+     <string name="btnnotpassed">Nicht bestanden:(</string>
+     
+     
+     <string name="btnnuovotxt">Anfangen</string>
+     
+     <string name="btnerroritxt">Fehler sehen</string> 
+     <string name="btnverotxt">Richtig</string>            
+     <string name="btnfalsotxt">Falsch</string>
+     
+     <string name="ausdemmarket">aus dem Android Market installieren</string>
+     <string name="keine">Keine Frage</string>
+
+     
+     <string name="helptext">
+         Die Prüfungsbögen entsprechen den Übungsbögen in der Fahrschule. In einigen Bundesländern wird auch schon 
+         die Prüfung am PC angeboten. \n\n
+
+Bis zum 1. Januar 2010 soll nach dem Willen der Bundesregierung die theoretische Führerscheinprüfung 
+in allen Bundesländern ausschließlich am PC durchgeführt werden. Dabei ersetzt die PC-Maus lediglich den Stift - es 
+bleibt auch hier bei insgesamt 30 Fragen zum Grund- und Spezialwissen mit unterschiedlicher Gewichtung.
+\n\n
+Bis zu 10 Fehlerpunkte ist die Prüfung bestanden.
+Bei 2 Fragen mit 5 Punkten-Wertung ist die Prüfung nicht bestanden.
+\n\n
+Auf jede Frage gibt es eine oder mehrere Antwortmöglichkeiten (Multiple-Choice). Alle Fragen sind mit unterschiedlichen Fehlerpunkten versehen. Überschreitet man die jeweils zugelassene Fehlerpunktzahl, fällt man durch. Eine erneute Prüfung ist meist erst zu einem späteren Zeitpunkt möglich (zwei Wochen) und kostet erneut Geld (Gebühren siehe Kostenkapitel "Preise für die Prüfungen"). Fällt ein Schüler drei Mal durch, muss er sich ein halbes Jahr gedulden, ehe er wieder zur Prüfung zugelassen wird. 
+   \n\n 
+    </string>
+    
+     
+       <!-- Menu item text [CHAR LIMIT=NONE] -->
+    <string name="accounts">Accounts</string>
+
+    <!-- Dialog button [CHAR LIMIT=NONE] -->
+    <string name="add_account">Add account...</string>
+
+
+
+    <!-- Dialog title text [CHAR LIMIT=NONE] -->
+    <string name="attention">Attention</string>
+
+    <!-- Button text [CHAR LIMIT=NONE] -->
+    <string name="connect">Connect</string>
+
+    <!-- Message text for "Connect" screen [CHAR LIMIT=NONE] -->
+    <string name="connect_text">This application requires a google account to post messages in the forum</string>
+
+    <!-- Header text for "Connect" screen [CHAR LIMIT=NONE] -->
+    <string name="connect_to_the_cloud">Login into The Cloud</string>
+
+    <!-- Header text for "Connected" screen [CHAR LIMIT=NONE] -->
+    <string name="connected_to_the_cloud">Logged into The Cloud</string>
+
+    <!-- Message text [CHAR LIMIT=NONE] -->
+    <string name="contacting_server">Contacting server...</string>
+
+    <!-- Button text [CHAR LIMIT=NONE] -->
+    <string name="disconnect">Disconnect</string>
+
+    <!-- Informational text for "Connected" screen with placeholder for account name [CHAR LIMIT=NONE] -->
+    <string name="disconnect_text">This device is currently connected to the cloud as %1$s.</string>
+
+    <!-- Footer text for "Connect" screen [CHAR LIMIT=NONE] -->
+    <string name="do_you_want_to_connect">Do you want to connect?</string>
+
+    <!-- Footer text for "Disconnect" screen [CHAR LIMIT=NONE] -->
+    <string name="do_you_want_to_disconnect">Do you want to disconnect?</string>
+
+    <!-- Initial "hello, world" informational message [CHAR LIMIT=NONE] -->
+    <string name="hello_world_info_text">-- unused --</string>
+
+    <!-- Initial "hello, world" response message [CHAR LIMIT=NONE] -->
+    <string name="hello_world_text">-- unused --</string>
+
+    <!-- Dialog message text [CHAR LIMIT=NONE] -->
+    <string name="needs_account">To post on the forum you need a google account.</string>
+
+    <!-- Notification message [CHAR LIMIT=NONE] -->
+    <string name="registration_error">Failed to register/unregister %1$s.</string>
+
+    <!-- Notification message [CHAR LIMIT=NONE] -->
+    <string name="registration_succeeded">Registered %1$s for C2DM messaging.</string>
+
+    <!-- Button text [CHAR LIMIT=NONE] -->
+    <string name="say_hello">Say Hello</string>
+
+    <!-- List view header text [CHAR LIMIT=NONE] -->
+    <string name="select_account">Select the account you wish to authorize:</string>
+
+    <!-- Dialog button text [CHAR LIMIT=NONE] -->
+    <string name="skip">Skip</string>
+
+    <!-- Notification message [CHAR LIMIT=NONE] -->
+    <string name="unregistration_succeeded">Unregistered %1$s for C2DM messaging.</string>
+
+    <string name="exit">exit</string>
+    <string name="subj">Thema</string>
+    <string name="qid">qid</string>
+    <string name="hideemail">Anonym?</string>
+    <string name="forum">Forum</string>
+    <string name="from">From</string>
+    <string name="anon">Anonym</string>
+    <string name="body">Body</string>
+    <string name="nonet">Wifi or mobile data not available</string>
+    <string name="antworten">Antworten</string>
+    <string name="home">Home</string>
+    
+    <string name="nosubject">A valid subject should contain at least 10 characters</string>
+    <string name="nobody">A valid body should contain at least 10 characters</string>
+    <string name="noqid">No valid Question Id format</string>
+    
+    
+    <string name="msgerrretrive">Error retrieving topics:%s. There could be a connection problem.</string>
+    <string name="msg0posts">0 posts</string>
+    <string name="newpost">+New post</string>
+    
+    <string name="admobunitid">a14f4e444db2a39</string>    
+    
+    
+    
+    
+    
+    <string name="ok">ok</string>
+    
+
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_height="wrap_content"
+   android:gravity="left|center"
+   android:layout_width="wrap_content"
+   android:paddingBottom="5dp"
+   android:paddingTop="5dp"
+   android:paddingLeft="5dp" android:orientation="vertical">
+
+<Button
+        android:id="@+id/gotoforum"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+       
+       
+        
+   		android:background="@drawable/selectorbtnyellow"
+   		         android:clickable="true"
+         android:onClick="onClick" 
+        />
+  
+			         
+   <TextView android:id="@+id/txtdialogdomanda"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:color="#000000"
+      />
+     
+    <ImageView
+       android:id="@+id/imgdialogodomanda"
+       android:layout_width="wrap_content"
+       android:layout_height="fill_parent"
+       android:layout_marginRight="6dp"
+       android:gravity="center"
+        />
+   
+      <RelativeLayout 
+		 android:id="@+id/relativeLayoutFrage1"		               
+		           android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" 
+		         >
+     <CheckBox
+		        android:id="@+id/dialogdbutton1"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		       
+   android:paddingTop="5dp"
+  
+    
+		    	  android:button="@drawable/selectorbtnv"
+		         />
+     	
+      <View
+		      android:id="@+id/dialogview1"
+			android:layout_height="2dp"		
+			 android:layout_width="1dp"
+			         android:background="#FFFFFF" 
+			     android:layout_below="@+id/button2"
+			         />
+        
+       
+     
+     <CheckBox
+		        android:id="@+id/dialogdbutton2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		      
+ 
+  android:layout_below="@+id/dialogdbutton1" 
+   android:paddingTop="5dp"
+   
+    android:button="@drawable/selectorbtnv"
+		         />
+     
+        <View
+		      android:id="@+id/dialogview2"
+			android:layout_height="2dp"		
+			 android:layout_width="1dp"
+			         android:background="#FFFFFF" 
+			     android:layout_below="@+id/button2"
+			         />
+      
+     <CheckBox
+		        android:id="@+id/dialogdbutton3"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		       
+		          android:layout_below="@+id/dialogdbutton2"
+		            android:paddingTop="5dp"
+		            android:button="@drawable/selectorbtnv"
+		         />
+     	
+      
+
+        
+      
+        </RelativeLayout>
+</LinearLayout>
+
+

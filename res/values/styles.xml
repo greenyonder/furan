@@ -1,0 +1,15 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" >
+
+        </style>
+
+        <style name="AppThemeChat" parent="android:Theme.Light" >
+			<item name="android:windowTitleBackgroundStyle">@style/title</item>
+        </style>
+        
+        <style name="title"  >
+			<item name="android:background">@drawable/actionbar_background</item>
+        </style>
+        
+</resources>

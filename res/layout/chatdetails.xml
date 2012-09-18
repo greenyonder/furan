@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+               android:id="@+id/relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chatdetails"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+  <!--  Include Bar -->
+        <include layout="@layout/chatopbar"/>
+        
+  <ListView android:id="@+id/listView1" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+         android:clickable="true" 
+        />
+       
+  
+  <View
+			android:layout_height="200dp"		
+			 android:layout_width="fill_parent"
+			         android:background="#FFFFFF" />
+</LinearLayout>
+   
+    
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chatdetailsbottom"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+   
+    android:gravity="bottom"
+                  android:layout_alignParentBottom="true"
+                  android:layout_alignBottom="@+id/chatdetails"
+                  
+    >
+<include layout="@layout/chatcompose"/>
+<include layout="@layout/furchatfooter"/>
+
+</LinearLayout>
+
+</RelativeLayout>
