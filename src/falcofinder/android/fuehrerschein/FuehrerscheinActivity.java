@@ -233,8 +233,7 @@ import android.widget.AdapterView.OnItemClickListener;
 	    	SharedPreferences prefs = Util.getSharedPreferences(this);
 	    	
 	        switch (item.getItemId()) {
-	        
-	       
+	               
 	        
 	        case MENU_ERRORI:
 	            
