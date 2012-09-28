@@ -51,7 +51,18 @@
         android:textColor="#000000"
         
          />  
-          
+
+	    <TextView
+        android:id="@+id/kat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="normal"
+     
+        android:text=""
+        android:textColor="#000000"
+        
+         />
+	    
     	    <Button
         android:id="@+id/gotoforum"
         android:layout_width="130dp"
@@ -64,6 +75,9 @@
          android:onClick="onClick" 
         />
     	
+    	   
+    	  
+    	    
     	     <ScrollView android:id="@+id/scroll"
      android:layout_width="fill_parent"
     android:layout_height="wrap_content"

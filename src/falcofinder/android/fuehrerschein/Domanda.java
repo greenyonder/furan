@@ -12,7 +12,7 @@ public class Domanda   {
 		
 	}
 	
-	 public Domanda(String domanda,String image,String frage1,String frage2,String frage3,String correct1,String correct2,String correct3,String antwort1,String antwort2,String antwort3, String fehlerpunkt,String header, String iddom) {
+	 public Domanda(String domanda,String image,String frage1,String frage2,String frage3,String correct1,String correct2,String correct3,String antwort1,String antwort2,String antwort3, String fehlerpunkt,String header, String iddom, String idkat, String desckat) {
 	        this.domanda = domanda;
 	        this.image = image;
 	        this.frage1 = frage1;
@@ -28,9 +28,11 @@ public class Domanda   {
 	        this.fehlerpunkt = fehlerpunkt;
 	        this.header = header;
 	        this.iddom = iddom;
-	        
+	        this.idkat=idkat;
+	        this.desckat=desckat;
 	    }
 	 
+	
 	 
 	 public String image="";
 	 public String domanda="";
@@ -46,6 +48,8 @@ public class Domanda   {
 	 public String fehlerpunkt="";
 	 public String header="";	 
 	 public String iddom="";
+	 public String idkat="";	 
+	 public String desckat="";
 	 
 	 public int nfrage;
 	 

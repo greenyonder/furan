@@ -401,27 +401,5 @@ public class Util {
 			
 		}
 		
-		 /**
-	     * Display a notification containing the given string.
-	     */
-	    public static void generateNotification(Context context, String message) {
-	        int icon = R.drawable.status_icon;
-	        long when = System.currentTimeMillis();
-
-	        Notification notification = new Notification(icon, message, when);
-	        notification.setLatestEventInfo(context, "C2DM Example", message,
-	                PendingIntent.getActivity(context, 0, null, PendingIntent.FLAG_CANCEL_CURRENT));
-	        notification.flags |= Notification.FLAG_AUTO_CANCEL;
-
-	        SharedPreferences settings = Util.getSharedPreferences(context);
-	        int notificatonID = settings.getInt("notificationID", 0);
-
-	        NotificationManager nm = (NotificationManager) context
-	                .getSystemService(Context.NOTIFICATION_SERVICE);
-	        nm.notify(notificatonID, notification);
-
-	        SharedPreferences.Editor editor = settings.edit();
-	        editor.putInt("notificationID", ++notificatonID % 32);
-	        editor.commit();
-	    }
+		
 }

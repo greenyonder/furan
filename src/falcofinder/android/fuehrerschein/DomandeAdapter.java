@@ -117,10 +117,16 @@ public class DomandeAdapter extends ArrayAdapter<Domanda> {
             
             
       if (domanda != null) {
-    	  String testo = ""+d.domanda+" (" + d.fehlerpunkt + " Punkte)";
-			 if (!d.header.trim().equals("")) testo += "\n" + d.header;
+    	  String testo = ""+d.domanda+" \n(" + d.fehlerpunkt + " Punkte)";
+		testo += " " + d.desckat;
+    		 
+    	  if (!d.header.trim().equals("")) testo += "\n" + d.header;
+			 
+		
 			 
     	  domanda.setText(new SpannableString(testo));
+    	  
+    	  
       }
 
      

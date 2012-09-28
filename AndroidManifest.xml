@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="falcofinder.android.fuehrerschein"
-    android:versionCode="53"
-    android:versionName="5.3">
+    android:versionCode="54"
+    android:versionName="5.4" android:installLocation="preferExternal">
 
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="16" />
 

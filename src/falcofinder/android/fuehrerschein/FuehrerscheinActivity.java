@@ -82,7 +82,7 @@ import android.widget.AdapterView.OnItemClickListener;
 	    private static final int MENU_ERRORI = 6;
 	    private static final int MENU_RESET = 7;
 	    
-	    ArrayList<Domanda> arrdomande;
+	   
 	    private Domanda d; // domanda selezionata
 	    
 	   
@@ -272,26 +272,26 @@ import android.widget.AdapterView.OnItemClickListener;
 //				sql=	"select iddom , id_quiz , antwort1, antwort2, antwort3, correct1, correct2, correct3, points from " + DataBaseHelper.TABLE_ERRORS + " where (correct1=0) or (correct2=0) or (correct3=0) ";
 				
 
-				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 ";
+				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 , c.desc desckat";
 				sql += " from " + DataBaseHelper.TABLE_ERRORS + " a inner join " + DataBaseHelper.TABLE_FRAGEN + " b ";
-				sql +="  on a.qid=b.qid ";
+				sql +="  on a.qid=b.qid inner join " + DataBaseHelper.TABLE_KAT + " c on b.idkat=c.idkat ";
 				sql +="  where a.quid=" + this.quid+ "  and ((correct2=0) or (correct3=0) or (correct4=0) ) ";
 				
 			} 	else if (modedefault.equals("1")) {
 //				sql=	"select iddom , id_quiz , antwort1, antwort2, antwort3, correct1, correct2, correct3, points from " + DataBaseHelper.TABLE_ERRORS + " where (correct1=0) or (correct2=0) or (correct3=0) ";
 				
 
-				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 ";
+				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 , c.desc desckat";
 				sql += " from " + DataBaseHelper.TABLE_ERRORS + " a inner join " + DataBaseHelper.TABLE_FRAGEN + " b ";
-				sql +="  on a.qid=b.qid ";
+				sql +="  on a.qid=b.qid inner join " + DataBaseHelper.TABLE_KAT + " c on b.idkat=c.idkat ";
 				sql +="  where (correct2=0) or (correct3=0) or (correct4=0)  ";
 				
 			} else {
 				
 				
-				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 ";
+				sql += "select a.qid , b.domanda , a.answer2, a.answer3, a.answer4, a.correct2, a.correct3, a.correct4, b.weight , b.header, b.image, b.Risposte_campo2,b.Risposte_campo3,b.Risposte_campo4 , c.desc desckat";
 				sql += " from " + DataBaseHelper.TABLE_ERRORS + " a inner join " + DataBaseHelper.TABLE_FRAGEN + " b ";
-				sql +="  on a.qid=b.qid ";
+				sql +="  on a.qid=b.qid inner join " + DataBaseHelper.TABLE_KAT + " c on b.idkat=c.idkat ";
 			//	sql +="  where b.weight = " + modedefault + " and ((correct2=0) or (correct3=0) or (correct4=0))  ";
 				sql +="  where b.weight = '" + modedefault + "' and ((correct2=0) or (correct3=0) or (correct4=0))  ";
 			}
@@ -332,7 +332,15 @@ import android.widget.AdapterView.OnItemClickListener;
 	            	 domanda.frage1=""+cur.getString(11);
 	            	 domanda.frage2=""+cur.getString(12);
 	            	 domanda.frage3=""+cur.getString(13);
-	        	 
+	            	 domanda.desckat=""+cur.getString(14);
+	            	 
+	            	// System.out.println("---> domanda.desckat " + domanda.desckat + domanda.desckat.indexOf("-"));
+//	            	 System.out.println("---> domanda.desckat.equals " + domanda.desckat.equals(""));
+	            	 if (!domanda.desckat.equals("") && domanda.desckat.indexOf("-")>0) {
+	//            		 System.out.println("--->DENTRO" + domanda.desckat.substring(d.desckat.indexOf("-")));
+	            		 domanda.desckat = domanda.desckat.substring(domanda.desckat.indexOf("-"));
+		        	 	}
+	            //	 System.out.println("---> domanda.desckat " + domanda.desckat + domanda.desckat.indexOf("-"));
 	        	
 	        	 domandeerrate.add(domanda);
 	        
@@ -405,16 +413,23 @@ import android.widget.AdapterView.OnItemClickListener;
 			 TextView tv = (TextView) findViewById(R.id.textView1);
 			 ImageView iv1 = (ImageView)findViewById(R.id.imageView1);
 			 Button btngotoforum = (Button)findViewById(R.id.gotoforum);
-			 
-			
+			 TextView tvkat = (TextView) findViewById(R.id.kat);
 			 
 			  d = this.getDomanda();
-			
+			  
 			  btngotoforum.setText("+forum:" + d.iddom);
+
 			  
 		//	 System.out.println("--->arrQuiz[2]aa"+arrQuiz[2]);
-			 String testo = ""+d.domanda+" (" + d.fehlerpunkt + "-Punkte)";
+			 String testo = ""+d.domanda+" ";
+
+			 String punktkat = " (" + d.fehlerpunkt + " Punkte)";
+
+			  if (!d.desckat.trim().equals("")) punktkat +=" Kat." + d.desckat;
+			  tvkat.setText(punktkat);
 			 if (!d.header.trim().equals("")) testo += "\n" + d.header;
+
+			 
 			 
 			 if (this.modedefault.equals("0")) {
 				testo = d.nfrage + "/30)"+ testo;
@@ -920,7 +935,7 @@ import android.widget.AdapterView.OnItemClickListener;
 											
 					} 
 					
-					String sql = "select qid, domanda, header, image, Risposte_Campo2, Risposte_Campo3, Risposte_Campo4, Furanswer_Campo2, Furanswer_Campo3, Furanswer_Campo4, weight  from " + DataBaseHelper.TABLE_FRAGEN + " a " + filter + " order by Risposte_campo2 desc";
+					String sql = "select qid, domanda, header, image, Risposte_Campo2, Risposte_Campo3, Risposte_Campo4, Furanswer_Campo2, Furanswer_Campo3, Furanswer_Campo4, weight, b.desc desckat  from " + DataBaseHelper.TABLE_FRAGEN + " a inner join " + DataBaseHelper.TABLE_KAT + " b on a.idkat=b.idkat " + filter + " order by Risposte_campo2 desc";
 					
 					if (this.modedefault.equals("0")) {
 					
@@ -960,7 +975,16 @@ import android.widget.AdapterView.OnItemClickListener;
 			        	 d.antwort2 = ""+cur.getString(8);
 			        	 d.antwort3 = ""+cur.getString(9);
 			        	 d.fehlerpunkt = ""+cur.getString(10);
+			        	 
+			        	
+			        	 d.desckat= "";
+			        			 
 			        	 if (this.modedefault.equals("0")) d.nfrage = cur.getInt(11);
+			        	 else d.desckat= ""+cur.getString(11);
+			        	 
+			        	 	if (!d.desckat.equals("") && d.desckat.indexOf("-")>0) {
+			        	 		d.desckat = d.desckat.substring(d.desckat.indexOf("-"));
+			        	 	}
 			        	 
 			        	 }
 			        	 numerodomande++;
@@ -1000,7 +1024,7 @@ import android.widget.AdapterView.OnItemClickListener;
 		
 		public void onFailedToReceiveAd(Ad arg0, ErrorCode arg1) {
 			// TODO Auto-generated method stub
-			System.out.println("--->onFailedToReceiveAd"+arg0+arg1);
+			//System.out.println("--->onFailedToReceiveAd"+arg0+arg1);
 		}
 
 

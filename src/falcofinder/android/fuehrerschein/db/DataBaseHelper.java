@@ -43,6 +43,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 	public static final String TABLE_FRAGEN = "FRAGEN";
 	public static final String TABLE_PRUF = "PRUF";
 	public static final String TABLE_BOOKMARKS = "BOOKMARKS";
+	public static final String TABLE_KAT = "KAT";
 	
      /*   
 	 * Constructor

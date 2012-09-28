@@ -144,14 +144,18 @@ public class ChatsActivity extends Activity implements OnItemClickListener {
                  
             	  try {
             		  
-            		  //System.out.println("--->onPostExecute result"+result+"---");
+            		 // System.out.println("--->onPostExecute result"+result+"---");
             		  
 						JSONArray jsonarray = new JSONArray(result);
+						//System.out.println("---> jsonarray " + jsonarray.toString(2));
 						
 						alTopics = new ArrayList<ChatMessage>();
 						
 						for (int i = 0; i < jsonarray.length(); i++) {
 						    JSONObject row = jsonarray.getJSONObject(i);
+						    
+						    //System.out.println("---> row " + row.toString(2));
+						    
 						    ChatMessage chatmessage = new ChatMessage();
 						    //System.out.println("--->row"+"qid"+row.getString("qid"));
 						    if ("00000".equals(""+row.getString("qid"))) {

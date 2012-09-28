@@ -37,6 +37,9 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
@@ -87,7 +90,13 @@ public class ChatDetailsActivity extends Activity {
 	         
 	       loadChatDetails();
 	       initViews();
-	        
+	       SharedPreferences prefs = Util.getSharedPreferences(mContext);
+	        String connectionStatus = prefs.getString(Util.CONNECTION_STATUS, Util.DISCONNECTED);
+	       if (Util.DISCONNECTED.equals(connectionStatus)) {
+	     	    //	System.out.println("--->connectionStatus AccountsActivity");
+	               startActivity(new Intent(this, AccountsActivity.class));
+	               return;
+	           }
 	    }
 
 	private void initViews() {
@@ -233,6 +242,48 @@ public class ChatDetailsActivity extends Activity {
          	        // Initiate a generic request to load it with an ad
          	          adView.loadAd(request);
 		}
+	 
+	  @Override
+	    public boolean onCreateOptionsMenu(Menu menu) {
+	        MenuInflater inflater = getMenuInflater();
+	        inflater.inflate(R.menu.main_menu, menu);
+	        // Invoke the Register activity
+	       // menu.getItem(0).setIntent(new Intent(this, AccountsActivity.class));
+	        
+	        
+	        return true;
+	    }
+
+	    /**
+	     * 
+	     * Invoked when the user selects an item from the Menu.
+	     *
+	     * @param item the Menu entry which was selected
+	     * @return true if the Menu item was legit (and we consumed it), false
+	     *         otherwise
+	     */
+	    
+	    @Override
+	    public boolean onOptionsItemSelected(MenuItem item) {
+
+	    	SharedPreferences prefs = Util.getSharedPreferences(this);
+	    	
+	        switch (item.getItemId()) {
+	        
+	        case R.id.menuaccounts:
+	        //	System.out.println("--->onOptionsItemSelected menuaccounts");
+	        	startActivity(new Intent(this, AccountsActivity.class));
+	        
+	        	 
+	        	// System.out.println("--->onOptionsItemSelected R.layout.compose");
+	        	 return true;
+	        	 
+	        
+	        }
+			return true;
+	        
+	       }
+	    // Manage UI Screens
 	 
 	private void loadChatDetails() {
 		// TODO Auto-generated method stub

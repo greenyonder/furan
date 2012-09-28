@@ -11,6 +11,7 @@ import com.google.ads.AdView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,9 @@ public class ChatsAdapter extends ArrayAdapter<ChatMessage> {
 	    	ViewHolder holder = null;
 	        
 	  if (convertView == null) {
+		  
+		 Log.i("getView","getView convertView == null position" + position);
+		  
 	            LayoutInflater vi = (LayoutInflater)  getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	            convertView = vi.inflate(R.layout.listitemchat, null);
 	            
@@ -59,6 +63,7 @@ public class ChatsAdapter extends ArrayAdapter<ChatMessage> {
 	            convertView.setTag(holder);
 	  } else {
 		  holder = (ViewHolder) convertView.getTag();
+			 Log.i("getView","getView convertView != null position" + position);
 	  }
 	     
 	  ChatMessage c = chatmessages.get(position);
@@ -148,7 +153,7 @@ public class ChatsAdapter extends ArrayAdapter<ChatMessage> {
 	            
 	           
 	            holder.txtbody.setText(mContext.getString(R.string.body) + ":" +c.getBody());
-	      
+	      //System.out.println("--->holder txtsubject"+holder.txtsubject.getText());
 	  	}
 	  return convertView;
 	    }
