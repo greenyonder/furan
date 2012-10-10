@@ -338,7 +338,7 @@ import android.widget.AdapterView.OnItemClickListener;
 //	            	 System.out.println("---> domanda.desckat.equals " + domanda.desckat.equals(""));
 	            	 if (!domanda.desckat.equals("") && domanda.desckat.indexOf("-")>0) {
 	//            		 System.out.println("--->DENTRO" + domanda.desckat.substring(d.desckat.indexOf("-")));
-	            		 domanda.desckat = domanda.desckat.substring(domanda.desckat.indexOf("-"));
+	            		 domanda.desckat = domanda.desckat.substring(domanda.desckat.indexOf("-")+1);
 		        	 	}
 	            //	 System.out.println("---> domanda.desckat " + domanda.desckat + domanda.desckat.indexOf("-"));
 	        	
@@ -983,7 +983,7 @@ import android.widget.AdapterView.OnItemClickListener;
 			        	 else d.desckat= ""+cur.getString(11);
 			        	 
 			        	 	if (!d.desckat.equals("") && d.desckat.indexOf("-")>0) {
-			        	 		d.desckat = d.desckat.substring(d.desckat.indexOf("-"));
+			        	 		d.desckat = d.desckat.substring(d.desckat.indexOf("-")+1);
 			        	 	}
 			        	 
 			        	 }

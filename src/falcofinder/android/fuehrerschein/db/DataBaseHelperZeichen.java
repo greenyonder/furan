@@ -21,14 +21,13 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 
 
-public class DataBaseHelper extends SQLiteOpenHelper {
+public class DataBaseHelperZeichen extends SQLiteOpenHelper {
         /**
          * Database creation sql statement
          */
     //The Android's default system path of your application database.
-
  
-	private static final int DATABASE_VERSION = 26;
+	private static final int DATABASE_VERSION = 1;
 	
     private SQLiteDatabase myDataBase; 
  
@@ -37,20 +36,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             + Util.getPackageName()
             + "/databases/";
 	
-	private static String DB_NAME = "fragenfur.db";//the extension may be .sqlite or .db
+	private static String DB_NAME = "zeichenfur.db";//the extension may be .sqlite or .db
 
-	public static final String TABLE_ERRORS = "ERRORS";
-	public static final String TABLE_FRAGEN = "FRAGEN";
-	public static final String TABLE_PRUF = "PRUF";
-	public static final String TABLE_BOOKMARKS = "BOOKMARKS";
-	public static final String TABLE_KAT = "KAT";
-	
+	public static final String TABLE_KAT = "kat";
+	public static final String TABLE_ZEICHEN = "zeichen";
+
      /*   
 	 * Constructor
      * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
      * @param context
      */
-    public DataBaseHelper(Context context) {
+    public DataBaseHelperZeichen(Context context) {
  
     	super(context, DB_NAME, null, DATABASE_VERSION);
         this.myContext = context;
@@ -68,7 +64,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     		// By calling this method here onUpgrade will be called on a writeable database,
     		// but only if the version number has been bumped
-    		this.getReadableDatabase();
+    		this.getWritableDatabase();
     	//	System.out.println("--->dopo getReadableDatabase");
     	}
     	
@@ -157,7 +153,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
  
     	//Open the database
         String myPath = DB_PATH + DB_NAME;
-    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
  
     }
  
@@ -181,23 +177,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 		if (newVersion > oldVersion) {
 		
-			if (oldVersion==25) {
-				
-				
-				String sqlupdate = "update fragen set furanswer_campo2=1 ,  furanswer_campo3=1 ,  furanswer_campo4=0 where qid='2.5.01-116'";
-				//System.out.println("--->sqlupdate"+sqlupdate);
-				 db.execSQL(sqlupdate);
-						
-			} else {
-				myContext.deleteDatabase(DB_NAME);
-				 try {
-					copyDataBase();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		
+			 try {
+				 myContext.deleteDatabase(DB_NAME);
+				 copyDataBase();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			//
+			
 		}
          
 	}

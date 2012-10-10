@@ -1,7 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="falcofinder.android.fuehrerschein"
-    android:versionCode="54"
-    android:versionName="5.4" android:installLocation="preferExternal">
+    android:installLocation="preferExternal"
+    android:versionCode="55"
+    android:versionName="5.5" 
+
+    >
 
     <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="16" />
 
@@ -42,6 +45,12 @@
         
         <activity          
             android:name=".FuehrerscheinActivity"
+               android:theme="@android:style/Theme.NoTitleBar"
+               android:configChanges="keyboard|keyboardHidden|orientation"
+             > </activity>
+        
+               <activity          
+            android:name=".ZeichenActivity"
                android:theme="@android:style/Theme.NoTitleBar"
                android:configChanges="keyboard|keyboardHidden|orientation"
              > </activity>

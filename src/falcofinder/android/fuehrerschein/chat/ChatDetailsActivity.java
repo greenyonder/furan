@@ -272,7 +272,7 @@ public class ChatDetailsActivity extends Activity {
 	        
 	        case R.id.menuaccounts:
 	        //	System.out.println("--->onOptionsItemSelected menuaccounts");
-	        	startActivity(new Intent(this, AccountsActivity.class));
+	        	startActivityForResult(new Intent(this, AccountsActivity.class),0);
 	        
 	        	 
 	        	// System.out.println("--->onOptionsItemSelected R.layout.compose");
@@ -332,7 +332,7 @@ public class ChatDetailsActivity extends Activity {
 						    JSONObject row = jsonarray.getJSONObject(i);
 						    ChatMessage chatmessage = new ChatMessage();
 						    
-						   // System.out.println("--->onPostExecute keyfather"+row.getString("keyfather"));
+						   // System.out.println("--->onPostExecute row"+row);
 						   
 						    qid = row.getString("qid");
 						  //  System.out.println("--->onPostExecute setShowqidbtn(true);");

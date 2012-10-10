@@ -48,11 +48,11 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
 	 /** Called when the activity is first created. */
 	  private static String MY_AD_UNIT_ID; 
 		private AdView adView;
-		ArrayList<Domanda> alDomande2;
+		/*ArrayList<Domanda> alDomande2;
 		ArrayList<Domanda> alDomande3;
 		ArrayList<Domanda> alDomande4;
 		ArrayList<Domanda> alDomande5;
-
+*/
 	Dialog dialogHelp;
 	int numeroquiz=0;
 	
@@ -240,6 +240,12 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
         chatAction.setTitle("Nie Mehr Fahrschule");
         chatAction.setIcon(getResources().getDrawable(R.drawable.forum));
  
+        /// zeichenAction
+        ActionItem zeichenAction = new ActionItem();
+        
+        zeichenAction.setTitle(getString(R.string.menu_zeichen));
+        zeichenAction.setIcon(getResources().getDrawable(R.drawable.furiconfurzeichen));
+        
         ActionItem motoAction = new ActionItem();
         
         motoAction.setTitle(getString(R.string.menu_moto));
@@ -249,6 +255,8 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
         
         mofaAction.setTitle(getString(R.string.menu_mofa));
         mofaAction.setIcon(getResources().getDrawable(R.drawable.furiconfurmofa));
+        
+
         
         /// ERRORS
         ActionItem fehlerAction = new ActionItem();
@@ -269,6 +277,7 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
        
         final QuickAction mQuickAction  = new QuickAction(this);
         mQuickAction.addActionItem(chatAction);
+        mQuickAction.addActionItem(zeichenAction);
         mQuickAction.addActionItem(motoAction);
         mQuickAction.addActionItem(mofaAction);
         mQuickAction.addActionItem(fehlerAction);
@@ -291,7 +300,14 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
                     	
                  		    startActivity(intentChat);
                  		
-               	 }  else if  (pos == 1) { //Add item selected
+                	}  else if  (pos == 1) {
+                           	
+                           	Intent intentZeichen = new Intent(getApplicationContext(), ZeichenActivity.class);;
+                      		
+                           	
+                        		    startActivity(intentZeichen);               		    
+                 		    
+               	 }  else if  (pos == 2) { //Add item selected
                 		Intent i = new Intent("android.intent.action.MAIN");
                 		ComponentName n = new
                 		ComponentName("falcofinder.android.fuehrerscheinmoto",
@@ -311,7 +327,7 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
                    		startActivity(intent);
                    		
                 		}
-                	 } else if (pos == 2) {
+                	 } else if (pos == 3) {
                 		 Intent i = new Intent("android.intent.action.MAIN");
                  		ComponentName n = new
                  		ComponentName("falcofinder.android.fuehrerscheinmofa",
@@ -331,9 +347,9 @@ public class FuehrerscheinMainActivity extends Activity  implements AdListener {
                     		startActivity(intent);
                     		
                  		}
-                	 } else if (pos == 3) { //Add item selected
+                	 } else if (pos == 4) { //Add item selected
                         	dialogdomandeerrate();
-                        } else if (pos == 4) { //Accept item selected
+                        } else if (pos == 5) { //Accept item selected
                         	
                         	reset();
                       

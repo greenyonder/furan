@@ -47,7 +47,7 @@ public class ChatsAdapter extends ArrayAdapter<ChatMessage> {
 	        
 	  if (convertView == null) {
 		  
-		 Log.i("getView","getView convertView == null position" + position);
+		// Log.i("getView","getView convertView == null position" + position);
 		  
 	            LayoutInflater vi = (LayoutInflater)  getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	            convertView = vi.inflate(R.layout.listitemchat, null);
@@ -63,7 +63,7 @@ public class ChatsAdapter extends ArrayAdapter<ChatMessage> {
 	            convertView.setTag(holder);
 	  } else {
 		  holder = (ViewHolder) convertView.getTag();
-			 Log.i("getView","getView convertView != null position" + position);
+			// Log.i("getView","getView convertView != null position" + position);
 	  }
 	     
 	  ChatMessage c = chatmessages.get(position);

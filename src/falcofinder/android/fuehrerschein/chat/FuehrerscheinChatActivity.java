@@ -161,7 +161,8 @@ public class FuehrerscheinChatActivity extends Activity {
         
   	    if (Util.DISCONNECTED.equals(connectionStatus)) {
   	    //	System.out.println("--->connectionStatus AccountsActivity");
-            startActivity(new Intent(this, AccountsActivity.class));
+//            startActivity(new Intent(this, AccountsActivity.class));
+            startActivityForResult(new Intent(this, AccountsActivity.class),0);
             return;
         }
         
