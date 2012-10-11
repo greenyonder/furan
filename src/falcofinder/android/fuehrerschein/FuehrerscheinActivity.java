@@ -377,7 +377,6 @@ import android.widget.AdapterView.OnItemClickListener;
         TextView text = (TextView) dialog.findViewById(R.id.TextView01);
         Spannable WordtoSpan = new SpannableString(testo);
         text.setText(testo);
-        
 
         //set up button
         ImageButton button = (ImageButton) dialog.findViewById(R.id.Button01);
